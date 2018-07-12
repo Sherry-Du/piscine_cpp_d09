@@ -1,0 +1,28 @@
+#include "RefPtr.hpp"
+
+RefPtr::RefPtr(BaseComponent *rawPtr) : _rawPtr(rawPtr), _refCounter(new int)
+{
+    *_refCounter = 1;
+}
+
+RefPtr::RefPtr(RefPtr const &other) : _rawPtr(other._rawPtr), _refCounter(other._refCounter)
+{
+    (*_refCounter)++;
+}
+
+RefPtr::~RefPtr()
+{
+    if (--(*_refCounter) == 0)
+	delete _rawPtr;
+}
+
+RefPtr &RefPtr::operator=(RefPtr const &other)
+{
+    if (--(*_refCounter) == 0)
+	delete _rawPtr;
+    _rawPtr = other._rawPtr;
+    _refCounter = other._refCounter;
+    (*_refCounter)++;
+    return (*this);
+}
+
