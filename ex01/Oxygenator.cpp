@@ -21,5 +21,13 @@ Oxygenator::generateOxygen()
 void
 Oxygenator::useOxygen(int quantity)
 {
-  _quantity -= quantity;
+    LifeCriticalError lfOx("Not enough oxygen to live.", "Oxygenator");
+    _quantity -= quantity;
+    if (_quantity <= 5)
+        throw lfOx;
+    if (_quantity <= 15) 
+    {
+        MissionCriticalError msOx("Not enough oxygen to continue the mission.", "Oxygenator");
+        throw msOx;
+    }
 }

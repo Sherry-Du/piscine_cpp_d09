@@ -184,8 +184,8 @@ int
 main()
 {
     testWaterReclaimer();
-    /*testOxygenator();
+    testOxygenator();
     testEngine();
-    testAtmosphereRegulator();*/
+    testAtmosphereRegulator();
     return 0;
 }

@@ -4,6 +4,8 @@
 
 AtmosphereRegulator::AtmosphereRegulator()
 {
+    NasaError err("Not implemented.","AtmosphereRegulator");
+    throw err;
 }
 
 AtmosphereRegulator::~AtmosphereRegulator()

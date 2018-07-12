@@ -6,7 +6,7 @@
 class BaseComponent
 {
 public:
-    virtual ~BaseComponent();
+    virtual ~BaseComponent(){};
 };
 
 #endif // BASE_COMPONENT_HPP_

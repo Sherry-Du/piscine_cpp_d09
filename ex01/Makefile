@@ -1,12 +1,12 @@
 
 NAME = RoverUnitTests
 
-SRCS = \
+SRCS = Errors.cpp \
 	Engine.cpp \
 	AtmosphereRegulator.cpp \
 	Oxygenator.cpp \
 	WaterReclaimer.cpp \
-	RoverUnitTests.cpp
+	RoverUnitTests.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 

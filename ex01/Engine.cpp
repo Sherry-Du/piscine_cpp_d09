@@ -21,6 +21,13 @@ Engine::~Engine()
 void
 Engine::goTorward(float x, float y)
 {
+    std::stringstream res2;
+    res2 << "Cannot reach destination (" << x << ", " << y << ").";
+    if (distanceTo(x, y) > _power) 
+    {
+        UserError er(res2.str(), "Engine");
+        throw er;
+    }
     _x = x;
     _y = y;
 }
