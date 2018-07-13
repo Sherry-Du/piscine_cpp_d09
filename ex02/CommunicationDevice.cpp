@@ -5,7 +5,7 @@
 #include "CommunicationDevice.hpp"
 
 CommunicationDevice::CommunicationDevice(std::istream &input, std::ostream &output)
-    : _api(api)
+    : _api(input, output)
 {}
 
 CommunicationDevice::~CommunicationDevice()
