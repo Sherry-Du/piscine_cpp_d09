@@ -11,8 +11,8 @@
 class CommunicationDevice
 {
     public:
-
         CommunicationDevice(CommunicationAPI &api);
+	CommunicationDevice(std::istream &input, std::ostream &output);
         ~CommunicationDevice();
 
         void startMission(std::string const &missionName,
@@ -23,6 +23,8 @@ class CommunicationDevice
 
     private:
         CommunicationAPI &_api;
+	std::istream &_input;
+        std::ostream &_output;
 };
 
 #endif // COMMUNICATION_DEVICE_HPP_
