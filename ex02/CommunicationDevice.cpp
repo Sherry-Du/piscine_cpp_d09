@@ -4,20 +4,9 @@
 #include "Errors.hpp"
 #include "CommunicationDevice.hpp"
 
-CommunicationDevice::CommunicationDevice(CommunicationAPI &api)
-    : _api(api)
-{
-}
-
 CommunicationDevice::CommunicationDevice(std::istream &input, std::ostream &output)
-    : _input(input),
-      _output(output)
-{
-    if (!_input.good())
-        throw std::runtime_error("Invalid input stream.");
-    if (!_output.good())
-        throw std::runtime_error("Invalid output stream.");
-}
+    : _api(api)
+{}
 
 CommunicationDevice::~CommunicationDevice()
 {

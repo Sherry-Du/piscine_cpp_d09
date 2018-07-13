@@ -11,7 +11,6 @@
 class CommunicationDevice
 {
     public:
-        CommunicationDevice(CommunicationAPI &api);
 	CommunicationDevice(std::istream &input, std::ostream &output);
         ~CommunicationDevice();
 
@@ -23,8 +22,6 @@ class CommunicationDevice
 
     private:
         CommunicationAPI &_api;
-	std::istream &_input;
-        std::ostream &_output;
 };
 
 #endif // COMMUNICATION_DEVICE_HPP_
